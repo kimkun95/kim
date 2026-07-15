@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store</title>
+    <link rel="stylesheet" href="css/01_style_top.css">
+    <link rel="stylesheet" href="css/02_style_middle.css">
+    <link rel="stylesheet" href="css/04_style_body.css">
+    <link rel="stylesheet" href="css/05_style_footer.css">
+
+</head>
+<header class="top">
+    <div class="aladin_header">
+        <div class="inner">
+            <ul class="L_gnb" id="headertop_Lgnb">
+                <li>
+                    <a href="index.html" title="HOME" class="on">HOME</a>
+                </li>
+                <li>
+                    <a href="#" title="국내도서">국내도서</a>
+                </li>
+                <li>
+                    <a href="#" title="전자책">전자책</a>
+                </li>
+                <li>
+                    <a href="#" title="만권당">만권당</a>
+                </li>
+                <li>
+                    <a href="#" title="외국도서">외국도서</a>
+                </li>
+                <li>
+                    <a href="#" title="알라딘굿즈">알라딘굿즈</a>
+                </li>
+                <li>
+                    <a href="#" title="온라인중고">온라인중고</a>
+                </li>
+                <li>
+                    <a href="#" title="중고매장">중고매장</a>
+                </li>
+                <li>
+                    <a href="#" title="우주점">우주점</a>
+                </li>
+                <li>
+                    <a href="#" title="음반">음반</a>
+                </li>
+                <li>
+                    <a href="#" title="블루레이">블루레이</a>
+                </li>
+                <li>
+                    <a href="#" title="커피">커피</a>
+                </li>
+            </ul>
+
+            <ul class="R_gnb" id="headertop_Rgnb">
+                <li>
+                    <a href="#" onclick="" title="로그인">로그인</a>
+                </li>
+                <li>
+                    <a href="#">회원가입</a>
+                </li>
+                <li>
+                    <a href="#">마이페이지▾</a>
+                </li>
+                <li>
+                    <a href="#">고객센터</a>
+                </li>
+                <li>
+                    <a href="#">장바구니
+                        <span id="count">(0)</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="aladin_header_mid">
+        <ul>
+            <button class="logo_btn"><img src="image/알라딘 27주년로고.gif" alt="로고"></button>
+
+            <div class="search_bar_wrap">
+                <button class="select_btn" onclick="toggleSelect(this)">통합검색
+                    <span class="arrow">▾</span>
+                </button>
+
+                <div class="input_wrap">
+                    <input type="text" id="search_word" name="q" oninput="toggleClearButton()"
+                        onkeydown="if(event.key === 'Enter') openSearchWindow()" placeholder="검색어를 입력하세요">
+                    <button type="button" class="input_del" id="search-clear-btn" onclick="clearInput()"
+                        style="display: none;">
+                        <img src="image/삭제버튼.png" alt="지우기">
+                    </button>
+
+                </div>
+                <button type="submit" class="돋보기" onclick="openSearchWindow()"><img src="image/돋보기.png"
+                        alt="돋보기"></button>
+                <script src="js/index.js" defer></script>
+            </div>
+
+            <button class="ad_btn"><img src="image/우측상단 광고.jpg" alt="광고"></button>
+
+        </ul>
+    </div>
+
+    <div class="aladin-header_bot">
+        <li class="cat">
+            <a href="#"><img src="image/좌측상단 메뉴.png" alt="메뉴"> 분야보기
+            </a>
+        </li>
+        <li class="pink">
+            <a href="#">프로젝트 헤일메리</a>
+        </li>
+        <li>
+            <a href="#">추천마법사▾</a>
+        </li>
+        <li>
+            <a href="#">베스트</a>
+        </li>
+        <li>
+            <a href="#">새로나온책</a>
+        </li>
+        <li>
+            <a href="#">이벤트▾</a>
+        </li>
+        <li>
+            <a href="#">정가인하도서▾</a>
+        </li>
+        <li>
+            <a href="#">추천도서▾</a>
+        </li>
+        <li>
+            <a href="#">작가와의 만남▾</a>
+        </li>
+        <li>
+            <a href="#">북펀드▾</a>
+        </li>
+        <li class="red">
+            <a href="#">북플 ∙</a>
+        </li>
+        <li class="red">
+            <a href="#">서재 ∙</a>
+        </li>
+        <li class="aqua">
+            <a href="#" title="투비컨티뉴드" target="_blank">
+                <div class="header_textani tobe">
+                    <span>투비컨티뉴드</span>
+                    <span>창작플랫폼</span>
+                    <span>투비컨티뉴드</span>
+                    ::after
+                </div>
+            </a>
+        </li>
+
+    </div>
+    <hr style="border: none; background-color: #33afe9; height: 1px;">
+
+
+    <body class="middle">
+        <header>
+            <div class="header-container">
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+                <ul class="side-banner">
+                    <li>
+                        <a href="#"><img src="image/정리함.png" title="side">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="image/위픽.png" title="side">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="image/나의 기록.png" title="side">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="image/참고서.png" title="side">
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="main-content">
+                    <div class="swiper_top">
+                        <!-- 전체 슬라이드를 감싸는 wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- 각각의 슬라이드는 swiper-slide 클래스가 필수입니다 -->
+                            <div class="swiper-slide">
+                                <a href="#">
+                                    <img src="image/book/살.jpg" alt="살">
+                                    <div class="text_group">
+                                        <p class="book_title">살</p>
+                                        <p class="book_sub">2025년 부커상 수상작</p>
+                                        <p class="book_aut">데이비드 솔로이 지음, 송예슬 옮김</p>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <img src="image/book/당신 이나의 숲입니다.jpg" alt="살">
+                                    <div class="text_group">
+                                        <p class="book_title">당신이 나의 숲입니다</p>
+                                        <p class="book_sub">신영복 10주기, 신영복을 읽는 시간</p>
+                                        <p class="book_aut">김명인 외 지음</p>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <img src="image/book/피아노로의 여정.jpg" alt="1번">
+                                    <div class="text_group">
+                                        <p class="book_title">피아노로의 여정</p>
+                                        <p class="book_sub">류이치 사카모토, 피아노의 뿌리</p>
+                                        <p class="book_aut">류이치 사카모토 지음, 황국영 옮김</p>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <img src="image/book/안녕, 피터팬.jpg" alt="">
+                                    <div class="text_group">
+                                        <p class="book_title">안녕, 피터팬</p>
+                                        <p class="book_sub">피터팬의 네버랜드를 위하여</p>
+                                        <p class="book_aut">전경철 지음</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide" id="event">
+                                <a href="https://www.aladin.co.kr/events/wevent.aspx?EventId=311389&start=we"><img
+                                        src="image/event/event03.jpg" alt=""></a>
+                                <a href="https://www.aladin.co.kr/events/wevent.aspx?EventId=311761&start=we"><img
+                                        src="image/event/event02.jpg" alt=""></a>
+                                <a href="https://www.aladin.co.kr/events/wevent.aspx?EventId=311559&start=we"><img
+                                        src="image/event/event01.jpg" alt=""></a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#">
+                                    <img src="image/book/살.jpg" alt="살">
+                                    <div class="text_group">
+                                        <p class="book_title">살</p>
+                                        <p class="book_sub">2025년 부커상 수상작</p>
+                                        <p class="book_aut">데이비드 솔로이 지음, 송예슬 옮김</p>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <img src="image/book/당신 이나의 숲입니다.jpg" alt="살">
+                                    <div class="text_group">
+                                        <p class="book_title">당신이 나의 숲입니다</p>
+                                        <p class="book_sub">신영복 10주기, 신영복을 읽는 시간</p>
+                                        <p class="book_aut">김명인 외 지음</p>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <img src="image/book/피아노로의 여정.jpg" alt="1번">
+                                    <div class="text_group">
+                                        <p class="book_title">피아노로의 여정</p>
+                                        <p class="book_sub">류이치 사카모토, 피아노의 뿌리</p>
+                                        <p class="book_aut">류이치 사카모토 지음, 황국영 옮김</p>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <img src="image/book/안녕, 피터팬.jpg" alt="">
+                                    <div class="text_group">
+                                        <p class="book_title">안녕, 피터팬</p>
+                                        <p class="book_sub">피터팬의 네버랜드를 위하여</p>
+                                        <p class="book_aut">전경철 지음</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#">
+                                    <img src="image/book/살.jpg" alt="살">
+                                    <div class="text_group">
+                                        <p class="book_title">살</p>
+                                        <p class="book_sub">2025년 부커상 수상작</p>
+                                        <p class="book_aut">데이비드 솔로이 지음, 송예슬 옮김</p>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <img src="image/book/당신 이나의 숲입니다.jpg" alt="살">
+                                    <div class="text_group">
+                                        <p class="book_title">당신이 나의 숲입니다</p>
+                                        <p class="book_sub">신영복 10주기, 신영복을 읽는 시간</p>
+                                        <p class="book_aut">김명인 외 지음</p>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <img src="image/book/피아노로의 여정.jpg" alt="1번">
+                                    <div class="text_group">
+                                        <p class="book_title">피아노로의 여정</p>
+                                        <p class="book_sub">류이치 사카모토, 피아노의 뿌리</p>
+                                        <p class="book_aut">류이치 사카모토 지음, 황국영 옮김</p>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <img src="image/book/안녕, 피터팬.jpg" alt="">
+                                    <div class="text_group">
+                                        <p class="book_title">안녕, 피터팬</p>
+                                        <p class="book_sub">피터팬의 네버랜드를 위하여</p>
+                                        <p class="book_aut">전경철 지음</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide" id="top_event">
+                                <a href="#">
+                                    <img src="image/book/살.jpg" alt="살">
+                                    <div class="text_group">
+                                        <p class="book_title">살</p>
+                                        <p class="book_sub">2025년 부커상 수상작</p>
+                                        <p class="book_aut">데이비드 솔로이 지음, 송예슬 옮김</p>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <img src="image/book/당신 이나의 숲입니다.jpg" alt="살">
+                                    <div class="text_group">
+                                        <p class="book_title">당신이 나의 숲입니다</p>
+                                        <p class="book_sub">신영복 10주기, 신영복을 읽는 시간</p>
+                                        <p class="book_aut">김명인 외 지음</p>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <img src="image/book/피아노로의 여정.jpg" alt="1번">
+                                    <div class="text_group">
+                                        <p class="book_title">피아노로의 여정</p>
+                                        <p class="book_sub">류이치 사카모토, 피아노의 뿌리</p>
+                                        <p class="book_aut">류이치 사카모토 지음, 황국영 옮김</p>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <img src="image/book/안녕, 피터팬.jpg" alt="">
+                                    <div class="text_group">
+                                        <p class="book_title">안녕, 피터팬</p>
+                                        <p class="book_sub">피터팬의 네버랜드를 위하여</p>
+                                        <p class="book_aut">전경철 지음</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#">
+                                    <img src="image/book/살.jpg" alt="살">
+                                    <div class="text_group">
+                                        <p class="book_title">살</p>
+                                        <p class="book_sub">2025년 부커상 수상작</p>
+                                        <p class="book_aut">데이비드 솔로이 지음, 송예슬 옮김</p>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <img src="image/book/당신 이나의 숲입니다.jpg" alt="살">
+                                    <div class="text_group">
+                                        <p class="book_title">당신이 나의 숲입니다</p>
+                                        <p class="book_sub">신영복 10주기, 신영복을 읽는 시간</p>
+                                        <p class="book_aut">김명인 외 지음</p>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <img src="image/book/피아노로의 여정.jpg" alt="1번">
+                                    <div class="text_group">
+                                        <p class="book_title">피아노로의 여정</p>
+                                        <p class="book_sub">류이치 사카모토, 피아노의 뿌리</p>
+                                        <p class="book_aut">류이치 사카모토 지음, 황국영 옮김</p>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <img src="image/book/안녕, 피터팬.jpg" alt="">
+                                    <div class="text_group">
+                                        <p class="book_title">안녕, 피터팬</p>
+                                        <p class="book_sub">피터팬의 네버랜드를 위하여</p>
+                                        <p class="book_aut">전경철 지음</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#">
+                                    <img src="image/book/살.jpg" alt="살">
+                                    <div class="text_group">
+                                        <p class="book_title">살</p>
+                                        <p class="book_sub">2025년 부커상 수상작</p>
+                                        <p class="book_aut">데이비드 솔로이 지음, 송예슬 옮김</p>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <img src="image/book/당신 이나의 숲입니다.jpg" alt="살">
+                                    <div class="text_group">
+                                        <p class="book_title">당신이 나의 숲입니다</p>
+                                        <p class="book_sub">신영복 10주기, 신영복을 읽는 시간</p>
+                                        <p class="book_aut">김명인 외 지음</p>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <img src="image/book/피아노로의 여정.jpg" alt="1번">
+                                    <div class="text_group">
+                                        <p class="book_title">피아노로의 여정</p>
+                                        <p class="book_sub">류이치 사카모토, 피아노의 뿌리</p>
+                                        <p class="book_aut">류이치 사카모토 지음, 황국영 옮김</p>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <img src="image/book/안녕, 피터팬.jpg" alt="">
+                                    <div class="text_group">
+                                        <p class="book_title">안녕, 피터팬</p>
+                                        <p class="book_sub">피터팬의 네버랜드를 위하여</p>
+                                        <p class="book_aut">전경철 지음</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#">
+                                    <img src="image/book/살.jpg" alt="살">
+                                    <div class="text_group">
+                                        <p class="book_title">살</p>
+                                        <p class="book_sub">2025년 부커상 수상작</p>
+                                        <p class="book_aut">데이비드 솔로이 지음, 송예슬 옮김</p>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <img src="image/book/당신 이나의 숲입니다.jpg" alt="살">
+                                    <div class="text_group">
+                                        <p class="book_title">당신이 나의 숲입니다</p>
+                                        <p class="book_sub">신영복 10주기, 신영복을 읽는 시간</p>
+                                        <p class="book_aut">김명인 외 지음</p>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <img src="image/book/피아노로의 여정.jpg" alt="1번">
+                                    <div class="text_group">
+                                        <p class="book_title">피아노로의 여정</p>
+                                        <p class="book_sub">류이치 사카모토, 피아노의 뿌리</p>
+                                        <p class="book_aut">류이치 사카모토 지음, 황국영 옮김</p>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <img src="image/book/안녕, 피터팬.jpg" alt="">
+                                    <div class="text_group">
+                                        <p class="book_title">안녕, 피터팬</p>
+                                        <p class="book_sub">피터팬의 네버랜드를 위하여</p>
+                                        <p class="book_aut">전경철 지음</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="#">
+                                    <img src="image/book/살.jpg" alt="살">
+                                    <div class="text_group">
+                                        <p class="book_title">살</p>
+                                        <p class="book_sub">2025년 부커상 수상작</p>
+                                        <p class="book_aut">데이비드 솔로이 지음, 송예슬 옮김</p>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <img src="image/book/당신 이나의 숲입니다.jpg" alt="살">
+                                    <div class="text_group">
+                                        <p class="book_title">당신이 나의 숲입니다</p>
+                                        <p class="book_sub">신영복 10주기, 신영복을 읽는 시간</p>
+                                        <p class="book_aut">김명인 외 지음</p>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <img src="image/book/피아노로의 여정.jpg" alt="1번">
+                                    <div class="text_group">
+                                        <p class="book_title">피아노로의 여정</p>
+                                        <p class="book_sub">류이치 사카모토, 피아노의 뿌리</p>
+                                        <p class="book_aut">류이치 사카모토 지음, 황국영 옮김</p>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <img src="image/book/안녕, 피터팬.jpg" alt="">
+                                    <div class="text_group">
+                                        <p class="book_title">안녕, 피터팬</p>
+                                        <p class="book_sub">피터팬의 네버랜드를 위하여</p>
+                                        <p class="book_aut">전경철 지음</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. 하단 스와이퍼 -->
+                    <div class="swiper_bn">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">편집장의 선택</div>
+                            <div class="swiper-slide">추천 이벤트</div>
+                            <div class="swiper-slide">이 주의 책</div>
+                            <div class="swiper-slide">신간 소개</div>
+                            <div class="swiper-slide">눈에 띄는 새책</div>
+                            <div class="swiper-slide">화제의 책</div>
+                            <div class="swiper-slide">이벤트 굿즈</div>
+                            <div class="swiper-slide">지금 펀딩중</div>
+                            <div class="swiper-slide">eBook</div>
+                            <button type="button" id="btn-swiper-toggle" class="btn-toggle">⏸</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+</header>
+
+<main>
+    <ul class="main_body">
+        <li class="li-thumb-active">편집장의 선택</li>
+        <li>eBook</li>
+        <li>외국도서</li>
+        <li>화제의 책</li>
+        <li>신간 도서</li>
+    </ul>
+    <div class="main_book-re">
+        <h3 id="recommendTitle"></h3>
+        <div id="indexBookList" class="index-book-list">
+            <p style="grid-column: 1/-1; text-align: center; color: #aaaaaa;">도서를 불러오는 중입니다...</p>
+        </div>
+    </div>
+</main>
+<hr class="bot" style="border: none; background-color: #919191; height: 1px;">
+<footer>
+    <h4>(주)알라딘커뮤니케이션</h4>
+    <h4>고객센터 1544-2514 (발신자 부담)</h4>
+    <ul class="footer_1">
+        <li>대표이사 최우경</li>
+        <li>사업자등록 201-81-23094</li>
+        <li>통신판매업신고 2003-서울중구-01520</li>
+        <li>이메일 privacy@aladin.co.kr</li>
+        <li>호스팅 제공자 알라딘커뮤니케이션</li>
+    </ul>
+    <div>ⓒ Aladin Communication. All Rights Reserved.</div>
+
+</footer>
+</body>
+<div id="bookList"></div>
+
+</html>
